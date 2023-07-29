@@ -31,6 +31,7 @@ jobs:
         node-version: [18.x, 17.x, 16.x]
 
     steps:
+
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -43,6 +44,8 @@ jobs:
         run: |
           npm i
           npm run build
+        env:
+          TEST: $TEST_VARIAVEL
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
